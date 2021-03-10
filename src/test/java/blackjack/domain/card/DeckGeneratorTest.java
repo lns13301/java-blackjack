@@ -10,6 +10,6 @@ public class DeckGeneratorTest {
     @DisplayName("덱 생성 테스트")
     @Test
     void create() {
-        assertThat(new DeckGenerator().create()).hasSize(52);
+        assertThat(new CardGenerator().create()).hasSize(52);
     }
 }

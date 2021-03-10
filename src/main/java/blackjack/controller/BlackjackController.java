@@ -1,7 +1,7 @@
 package blackjack.controller;
 
+import blackjack.domain.card.CardGenerator;
 import blackjack.domain.card.Deck;
-import blackjack.domain.card.DeckGenerator;
 import blackjack.domain.player.Dealer;
 import blackjack.domain.player.Player;
 import blackjack.view.InputView;
@@ -21,8 +21,8 @@ public class BlackjackController {
         OutputView.printParticipate(players);
 
         Dealer dealer = new Dealer(DEALER);
-        DeckGenerator cardFactory = new DeckGenerator();
-        Deck deck = new Deck(cardFactory.createWithShuffle());
+        CardGenerator cardGenerator = new CardGenerator();
+        Deck deck = cardGenerator.createDeckWithShuffle();
 
         initialDrawDealer(deck, dealer);
         initialDrawPlayer(deck, players);

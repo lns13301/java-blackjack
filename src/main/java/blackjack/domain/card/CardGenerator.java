@@ -2,16 +2,16 @@ package blackjack.domain.card;
 
 import java.util.*;
 
-public class DeckGenerator {
+public class CardGenerator {
 
     public Deque<Card> create() {
         return new ArrayDeque<>(iterateType(new ArrayList<>()));
     }
 
-    public Deque<Card> createWithShuffle() {
+    public Deck createDeckWithShuffle() {
         List<Card> cards = new ArrayList<>(create());
         Collections.shuffle(cards);
-        return new ArrayDeque<>(cards);
+        return new Deck(new ArrayDeque<>(cards));
     }
 
     private List<Card> iterateType(List<Card> cards) {
